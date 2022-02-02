@@ -1,0 +1,15 @@
+@import '../../sass/styles.scss';
+
+.ButtonAdd {
+    width: 25px;
+    height: 25px;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    border: none;
+    background-color: $orange;
+}
+
+.ButtonAdd:hover {
+    background-color: crimson;
+    cursor: pointer;
+}

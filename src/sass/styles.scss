@@ -1,0 +1,7 @@
+//Para serem usados nos components
+@forward './variables';
+
+//Para sererem usados nos partials
+@import './variables.scss';
+@import './global.scss';
+@import './typography.scss';

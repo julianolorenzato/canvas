@@ -1,0 +1,36 @@
+.Card {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    .h1 {
+        font-size: .5rem;
+        text-align: center;
+        background-color: crimson;
+
+        flex: 0 0 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .tag-container {
+        background-color: aqua;
+        overflow-y: scroll;
+
+        flex: 1;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+        height: 50px;
+
+        flex: 0 0 30px;
+    }
+}
+
