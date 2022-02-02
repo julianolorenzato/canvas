@@ -1,7 +1,7 @@
 import './App.scss'
 
-import { CanvasContainer } from '../CanvasContainer/CanvasContainer'
 import { Header } from '../../templates/Header'
+import { CanvasContainer } from '../CanvasContainer/CanvasContainer'
 
 function App() {
 

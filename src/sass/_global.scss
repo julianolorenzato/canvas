@@ -3,12 +3,17 @@
 }
 
 body {
+  color: $quaternary;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, $orange 0%, $yellow 100%);
+  background-color: $secondary;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

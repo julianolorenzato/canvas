@@ -5,10 +5,10 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
+    gap: 5px;
 
     .box {
-        background-color: blue;
+        background-color: transparent;
     }
 
     .box1 {
@@ -55,5 +55,13 @@
     .box9 {
         grid-column: 6 / 11;
         grid-row: 3 / 4;
+    }
+
+    /*Os Cards que estão no CanvasContainer tiveram a classe box[x] passada por props e já continham classe .tag-container*/
+    .box8, .box9 {
+        .tag-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
 }

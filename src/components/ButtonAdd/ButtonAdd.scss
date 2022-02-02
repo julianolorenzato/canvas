@@ -3,13 +3,13 @@
 .ButtonAdd {
     width: 25px;
     height: 25px;
-    font-size: 1.4rem;
     border-radius: 50%;
     border: none;
-    background-color: $orange;
+    background-color: $secondary;
+    color: #fff;
 }
 
 .ButtonAdd:hover {
-    background-color: crimson;
+    background-color: $tertiary;
     cursor: pointer;
 }

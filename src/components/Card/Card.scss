@@ -1,14 +1,16 @@
+@import '../../sass/styles.scss';
+
 .Card {
-    height: 100%;
-    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
     .h1 {
         font-size: .5rem;
         text-align: center;
-        background-color: crimson;
-
+        background-color: $primary;
+        color: #fff;
         flex: 0 0 50px;
 
         display: flex;
@@ -17,20 +19,38 @@
     }
     
     .tag-container {
-        background-color: aqua;
+        background: $tertiary;
         overflow-y: scroll;
+        padding: 0px 10px;
+        flex-grow: 1;
+        transition: .3s;
 
-        flex: 1;
+        .tag {
+            margin: 5px;
+        }
     }
 
-    .btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: antiquewhite;
-        height: 50px;
+    .tag-container:hover {
+        background: #fff;
+        cursor: pointer;
 
-        flex: 0 0 30px;
+    }
+
+    .tag-container::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .tag-container::-webkit-scrollbar-track {
+        background: $tertiary;
+      }
+
+    .tag-container::-webkit-scrollbar-thumb {
+        background: $primary;
+        border-radius: 20px;
+      }
+
+    .tag-container::-webkit-scrollbar-thumb:hover {
+        background: #999;
     }
 }
 

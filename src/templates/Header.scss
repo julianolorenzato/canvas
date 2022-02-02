@@ -1,6 +1,7 @@
+@import '../sass/styles.scss';
+
 .Header {
-    background-color: #333;
-    color: #fff;
+    background-color: $secondary;
     font-size: .7rem;
     padding: 15px 0px;
     
@@ -9,4 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h2 {
+        font-size: .8rem
+    }
 }
