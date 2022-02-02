@@ -1,13 +1,21 @@
 import { useState } from 'react'
 import './Card.scss'
 
-import { ButtonAdd } from '../ButtonAdd/ButtonAdd'
 import { Modal } from '../Modal/Modal'
 
 export function Card(props) {
 
     const [notes, setNotes] = useState([])
-    const [haveInput, setHaveInput] = useState(false)
+
+    const changeNote = (e) => {
+        const fakeNotes = notes
+        fakeNotes[e.target.title] = e.target.value
+        setNotes([...fakeNotes])
+    }
+
+    const addNote = () => {
+        setNotes([...notes, ''])
+    }
 
     const [toggleModal, setToggleModal] = useState(false)
 
@@ -16,25 +24,12 @@ export function Card(props) {
             <div className='h1'>
                 <h1 className='Card-h1'>{props.title}</h1>
             </div>
-            <div className='tag-container' onClick={() => {
+            <div className='note-container' onClick={() => {
                     setToggleModal(true)
             }}>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
-                <div className="tag">a</div>
+                {notes.map((value, key) => <div key={key} className='note'>{value}</div>)}
             </div>
-            {toggleModal && <Modal closeModal={() => {
+            {toggleModal && <Modal addNote={addNote} changeNote={changeNote} notes={notes} title={props.title} closeModal={() => {
                 setToggleModal(false)
             }} />}
         </div>

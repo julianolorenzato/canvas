@@ -6,6 +6,7 @@
 
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 10px #999;
     .h1 {
         font-size: .5rem;
         text-align: center;
@@ -18,38 +19,43 @@
         justify-content: center;
     }
     
-    .tag-container {
+    .note-container {
         background: $tertiary;
         overflow-y: scroll;
         padding: 0px 10px;
         flex-grow: 1;
         transition: .3s;
 
-        .tag {
-            margin: 5px;
+        .note {
+            width: 100%;
+            height: fit-content;
+            background-color: skyblue;
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 10px;
         }
     }
 
-    .tag-container:hover {
+    .note-container:hover {
         background: #fff;
         cursor: pointer;
 
     }
 
-    .tag-container::-webkit-scrollbar {
+    .note-container::-webkit-scrollbar {
         width: 5px;
     }
 
-    .tag-container::-webkit-scrollbar-track {
+    .note-container::-webkit-scrollbar-track {
         background: $tertiary;
-      }
+    }
 
-    .tag-container::-webkit-scrollbar-thumb {
+    .note-container::-webkit-scrollbar-thumb {
         background: $primary;
         border-radius: 20px;
-      }
+    }
 
-    .tag-container::-webkit-scrollbar-thumb:hover {
+    .note-container::-webkit-scrollbar-thumb:hover {
         background: #999;
     }
 }
