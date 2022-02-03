@@ -17,6 +17,11 @@ export function Card(props) {
         setNotes([...notes, ''])
     }
 
+    const removeNote = (e) => {
+        const fakeNotes = notes.filter((element, index) => index != e.target.title)
+        setNotes(fakeNotes)
+    }
+
     const [toggleModal, setToggleModal] = useState(false)
 
     return (
@@ -29,7 +34,7 @@ export function Card(props) {
             }}>
                 {notes.map((value, key) => <div key={key} className='note'>{value}</div>)}
             </div>
-            {toggleModal && <Modal addNote={addNote} changeNote={changeNote} notes={notes} title={props.title} closeModal={() => {
+            {toggleModal && <Modal addNote={addNote} changeNote={changeNote} removeNote={removeNote} notes={notes} title={props.title} closeModal={() => {
                 setToggleModal(false)
             }} />}
         </div>

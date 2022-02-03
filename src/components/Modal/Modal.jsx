@@ -1,9 +1,6 @@
 import { useRef } from 'react'
 import './Modal.scss'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
-
 export function Modal(props) {
 
     const ref = useRef()
@@ -19,9 +16,16 @@ export function Modal(props) {
             <div className='modalContainer'>
                 <h1>{props.title}</h1>
                 <div className='modalTags'>
-                    {Array.from(props.notes).map((_, index) => <textarea value={props.notes[index]} title={index} onChange={props.changeNote} key={index}></textarea>)}
+                    {Array.from(props.notes).map((_, index) => {
+                        return(
+                        <div key={index} className='tag'>
+                            <button onClick={props.removeNote} title={index}>-</button>
+                            <textarea value={props.notes[index]} title={index} onChange={props.changeNote}></textarea>
+                        </div>
+                        )
+                    })}
                 </div>
-                <button onClick={props.addNote}><FontAwesomeIcon icon={faPlus} /></button>
+                <button onClick={props.addNote}>Adicionar Nota</button>
             </div>
         </div>
     )

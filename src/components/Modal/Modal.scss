@@ -50,16 +50,44 @@
 
         .modalTags {
             height: 400px;
-            margin: 20px 0;
             overflow-y: auto;
 
-            textarea {
-                height: 50px;
-                width: 100%;
-                resize: vertical;
-                outline: none;
+            .tag {
+                margin: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                textarea {
+                    height: 50px;
+                    width: 80%;
+                    resize: vertical;
+                    outline: none;
+                    margin-right: 5px;
+                }
+
+                button {
+                    width: 30px;
+                }
             }
 
+        }
+
+        .modalTags::-webkit-scrollbar {
+            width: 5px;
+        }
+    
+        .modalTags::-webkit-scrollbar-track {
+            background: $tertiary;
+        }
+    
+        .modalTags::-webkit-scrollbar-thumb {
+            background: $primary;
+            border-radius: 20px;
+        }
+    
+        .modalTags::-webkit-scrollbar-thumb:hover {
+            background: #999;
         }
         
     }
