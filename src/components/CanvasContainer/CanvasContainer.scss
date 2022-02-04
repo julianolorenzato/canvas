@@ -59,9 +59,10 @@
 
     /*Os Cards que estão no CanvasContainer tiveram a classe box[x] passada por props e já continham classe .tag-container*/
     .box8, .box9 {
+
         .note-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 49% 49%;
             column-gap: 10px;
         }
     }

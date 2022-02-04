@@ -6,7 +6,7 @@
 
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 10px #999;
+    box-shadow: 0 0 15px rgb(117, 145, 124);
     .h1 {
         font-size: .5rem;
         text-align: center;
@@ -25,6 +25,7 @@
         padding: 0px 10px;
         flex-grow: 1;
         transition: .3s;
+        overflow-wrap: break-word;
 
         .note {
             width: 100%;

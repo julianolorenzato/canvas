@@ -1,5 +1,6 @@
-import { useRef } from 'react'
 import './Modal.scss'
+import { useRef, useContext } from 'react'
+import { NotesContext } from '../App/App'
 
 export function Modal(props) {
 
@@ -11,21 +12,43 @@ export function Modal(props) {
         }
     }
 
+    //------------------------------------------
+
+    const [ notes, setNotes ] = useContext(NotesContext)
+
+    const addNote = () => {
+        const fakeNotes = notes
+        fakeNotes[props.theID].push('')
+        setNotes(n => [...fakeNotes])
+    }
+
+    const removeNote = (e) => {
+        const fakeNotes = notes
+        fakeNotes[props.theID].splice(e.target.title, 1)
+        setNotes(n => [...fakeNotes])
+    }
+
+    const changeNote = (e) => {
+        const fakeNotes = notes
+        fakeNotes[props.theID][e.target.title] = e.target.value
+        setNotes(n => [...fakeNotes])
+    }
+
     return (
         <div ref={ref} onClick={closeModal} className='modalBackground'>
             <div className='modalContainer'>
                 <h1>{props.title}</h1>
                 <div className='modalTags'>
-                    {Array.from(props.notes).map((_, index) => {
+                    {Array.from(notes[props.theID]).map((note, index) => {
                         return(
                         <div key={index} className='tag'>
-                            <button onClick={props.removeNote} title={index}>-</button>
-                            <textarea value={props.notes[index]} title={index} onChange={props.changeNote}></textarea>
+                            <button onClick={removeNote} title={index}>-</button>
+                            <textarea value={note} title={index} onChange={changeNote}></textarea>
                         </div>
                         )
                     })}
                 </div>
-                <button onClick={props.addNote}>Adicionar Nota</button>
+                <button onClick={addNote}>Adicionar Nota</button>
             </div>
         </div>
     )

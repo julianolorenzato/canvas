@@ -1,40 +1,26 @@
-import { useState } from 'react'
 import './Card.scss'
+
+import { NotesContext } from '../App/App'
+import { useContext, useState } from 'react'
 
 import { Modal } from '../Modal/Modal'
 
 export function Card(props) {
 
-    const [notes, setNotes] = useState([])
-
-    const changeNote = (e) => {
-        const fakeNotes = notes
-        fakeNotes[e.target.title] = e.target.value
-        setNotes([...fakeNotes])
-    }
-
-    const addNote = () => {
-        setNotes([...notes, ''])
-    }
-
-    const removeNote = (e) => {
-        const fakeNotes = notes.filter((element, index) => index != e.target.title)
-        setNotes(fakeNotes)
-    }
-
     const [toggleModal, setToggleModal] = useState(false)
+
+
+    const [ notes ] = useContext(NotesContext)
 
     return (
         <div className={`Card ${props.className}`}>
             <div className='h1'>
                 <h1 className='Card-h1'>{props.title}</h1>
             </div>
-            <div className='note-container' onClick={() => {
-                    setToggleModal(true)
-            }}>
-                {notes.map((value, key) => <div key={key} className='note'>{value}</div>)}
+            <div className='note-container' onClick={() => {setToggleModal(true)}}>
+                {notes[props.theID].map((value, key) => <div key={key} className='note'>{value}</div>)}
             </div>
-            {toggleModal && <Modal addNote={addNote} changeNote={changeNote} removeNote={removeNote} notes={notes} title={props.title} closeModal={() => {
+            {toggleModal && <Modal theID={props.theID} title={props.title} closeModal={() => {
                 setToggleModal(false)
             }} />}
         </div>
