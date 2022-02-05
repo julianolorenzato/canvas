@@ -1,5 +1,7 @@
 import { Page, View, Document, Text, StyleSheet } from '@react-pdf/renderer'
 
+import { titles } from '../CanvasContainer/CanvasContainer'
+
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'row',
@@ -19,26 +21,35 @@ const styles = StyleSheet.create({
     title: {
         color: '#EAE6E5',
         backgroundColor: '#5B9279',
-        height: '50px',
+        height: '35px',
+        padding: '10px',
+        textAlign: 'center',
+        fontSize: '11pt',
+    },
+    note: {
+        width: '100%',
+        backgroundColor: '#87ceeb',
+        height: '20px',
+        borderRadius: '20px',
+        padding: '5px',
+        marginBottom: '5px'
     }
 })
 
-
 export const DocumentPDF = () => {
-    const abab = [1, 2, 3, 4, 534, 3422 ,423, 2, 34, 2, 423, 2,]
     return(
         <Document title='Canvas PDF' author='Canvas by: Juliano Lorenzato'>
             <Page size="A4" style={styles.page}>
-                {abab.map((value, key) => (
-                    <View key={key} style={styles.section}>
+{/*                 {fake.map((value, i) => (
+                    <View key={i} style={styles.section}>
                         <View style={styles.title}>
-                            <Text>{value}</Text>
+                            <Text>{titles[i]}</Text>
                         </View>
                         <Text>
-
+                            {fake[i].map((value, i) => <Text>{value}</Text>)}
                         </Text>
                     </View>
-                ))}
+                ))} */}
             </Page>
         </Document>
     )
