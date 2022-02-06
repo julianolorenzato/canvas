@@ -42,7 +42,7 @@ export function Modal(props) {
                     {Array.from(notes[props.theID]).map((note, index) => {
                         return(
                         <div key={index} className='tag'>
-                            <button onClick={removeNote} title={index}>-</button>
+                            <button onClick={removeNote} title={index}>X</button>
                             <textarea value={note} title={index} onChange={changeNote}></textarea>
                         </div>
                         )

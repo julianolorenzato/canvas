@@ -2,6 +2,7 @@
   "name": "canvas",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://julianolorenzato.github.io/canvas/",
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@react-pdf/renderer": "^2.1.1",
@@ -11,6 +12,7 @@
     "assert": "^2.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
+    "gh-pages": "^3.2.3",
     "process": "^0.11.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,6 +23,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",

@@ -16,11 +16,11 @@ export function Header() {
                 <span>Feito por: Juliano Lorenzato</span>
             </div>
             <div className='Header-btns'>
-                <PDFDownloadLink notes={notes} document={<DocumentPDF />} fileName="CanvasPDF.pdf">
+                {/* <PDFDownloadLink notes={notes} document={<DocumentPDF />} fileName="CanvasPDF.pdf">
                     {({ loading }) =>
                     loading ? 'Loading document...' : <button>Salvar como PDF</button>
                     }
-                </PDFDownloadLink>
+                </PDFDownloadLink> */}
             </div>
         </div>
     )
