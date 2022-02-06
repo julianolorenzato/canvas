@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/canvas/static/css/main.233bcee8.css",
+    "main.js": "/canvas/static/js/main.9685eaf0.js",
+    "static/js/787.6dca8993.chunk.js": "/canvas/static/js/787.6dca8993.chunk.js",
+    "static/media/OpenSans-ExtraBold.ttf": "/canvas/static/media/OpenSans-ExtraBold.312244ca5ea57843f749.ttf",
+    "static/media/OpenSans-Regular.ttf": "/canvas/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
+    "index.html": "/canvas/index.html",
+    "main.233bcee8.css.map": "/canvas/static/css/main.233bcee8.css.map",
+    "main.9685eaf0.js.map": "/canvas/static/js/main.9685eaf0.js.map",
+    "787.6dca8993.chunk.js.map": "/canvas/static/js/787.6dca8993.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.233bcee8.css",
+    "static/js/main.9685eaf0.js"
+  ]
+}
