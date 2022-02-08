@@ -1,6 +1,7 @@
-import './Modal.scss'
+import { Container, Wrapper, TagsContainer } from './styles'
+
 import { useRef, useContext } from 'react'
-import { NotesContext } from '../App/App'
+import { NotesContext } from '../../contexts/NotesContext'
 
 export function Modal(props) {
 
@@ -35,21 +36,21 @@ export function Modal(props) {
     }
 
     return (
-        <div ref={ref} onClick={closeModal} className='modalBackground'>
-            <div className='modalContainer'>
+        <Container ref={ref} onClick={closeModal}>
+            <Wrapper>
                 <h1>{props.title}</h1>
-                <div className='modalTags'>
+                <TagsContainer>
                     {Array.from(notes[props.theID]).map((note, index) => {
                         return(
-                        <div key={index} className='tag'>
+                        <div key={index}>
                             <button onClick={removeNote} title={index}>X</button>
                             <textarea value={note} title={index} onChange={changeNote}></textarea>
                         </div>
                         )
                     })}
-                </div>
+                </TagsContainer>
                 <button onClick={addNote}>Adicionar Nota</button>
-            </div>
-        </div>
+            </Wrapper>
+        </Container>
     )
 }

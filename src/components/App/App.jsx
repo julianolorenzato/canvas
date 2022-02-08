@@ -1,32 +1,28 @@
-import './App.scss'
-import React, { useState } from 'react'
+import GlobalStyles from '../../styles/global'
+import { Container } from './styles'
 
-import { Header } from '../../templates/Header'
+import { NotesProvider } from '../../contexts/NotesContext'
+import { ThemeProvider } from '../../contexts/ThemeContext'
+
+import { Header } from '../../templates/Header/Header'
 import { CanvasContainer } from '../CanvasContainer/CanvasContainer'
 
-const notesState = [
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  [],
-  []
-]
-
-export const NotesContext = React.createContext()
-
 function App() {
-  const [contextState, setContextState] = useState(notesState)
 
   return (
-    <div className='App'>
-      <NotesContext.Provider value={[ contextState, setContextState ]}>
-        <Header />
-        <CanvasContainer />
-      </NotesContext.Provider>
+    <div>
+      <NotesProvider>
+        <ThemeProvider>
+
+          <Container>
+            <Header />
+            <CanvasContainer />
+          </Container>
+
+          <GlobalStyles />
+        </ThemeProvider>
+      </NotesProvider>
+      
     </div>
   )
 }

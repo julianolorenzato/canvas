@@ -1,4 +1,5 @@
-import './CanvasContainer.scss'
+import { Container } from './styles'
+
 import { Card } from '../Card/Card'
 
 export const titles = [
@@ -16,16 +17,16 @@ export const titles = [
 export function CanvasContainer() {
 
   return (
-    <div className='container'>
-      <Card theID={0} className='box1' title={titles[0]} />
-      <Card theID={1} className='box2' title={titles[1]} />
-      <Card theID={2} className='box3' title={titles[2]} />
-      <Card theID={3} className='box4' title={titles[3]} />
-      <Card theID={4} className='box5' title={titles[4]} />
-      <Card theID={5} className='box6' title={titles[5]} />
-      <Card theID={6} className='box7' title={titles[6]} />
-      <Card theID={7} className='box8' title={titles[7]} />
-      <Card theID={8} className='box9' title={titles[8]} />
-    </div>
+    <Container>
+      <Card box='b1' theID={0} title={titles[0]} />
+      <Card box='b2' theID={1} title={titles[1]} />
+      <Card box='b3' theID={2} title={titles[2]} />
+      <Card box='b4' theID={3} title={titles[3]} />
+      <Card box='b5' theID={4} title={titles[4]} />
+      <Card box='b6' theID={5} title={titles[5]} />
+      <Card box='b7' theID={6} title={titles[6]} />
+      <Card box='b8' theID={7} title={titles[7]} />
+      <Card box='b9' theID={8} title={titles[8]} />
+    </Container>
   )
 }
