@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
     width: 300px;
     height: 500px;
     padding: 30px;
+    padding-top: 5px;
     border-radius: 20px;
     background-color: #eae6e5;
     box-shadow: 0 0 10px #444;
@@ -31,6 +32,8 @@ export const Wrapper = styled.div`
         text-align: center;
         font-size: 1.3rem;
         align-self: center;
+        padding: 15px;
+        color: ${props => props.theme.colors.text};
     }
 
     button {
@@ -54,7 +57,7 @@ export const TagsContainer = styled.div`
     overflow-y: auto;
 
     div {
-        margin: 20px 0;
+        margin-bottom: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
