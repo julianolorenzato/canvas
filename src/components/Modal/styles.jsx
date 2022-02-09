@@ -13,8 +13,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
     width: 300px;
     height: 500px;
-    padding: 30px;
-    padding-top: 5px;
+    padding: 0px 30px;
     border-radius: 20px;
     background-color: #eae6e5;
     box-shadow: 0 0 10px #444;
@@ -32,7 +31,7 @@ export const Wrapper = styled.div`
         text-align: center;
         font-size: 1.3rem;
         align-self: center;
-        padding: 15px;
+        margin: 20px 0px;
         color: ${props => props.theme.colors.text};
     }
 
@@ -43,6 +42,7 @@ export const Wrapper = styled.div`
         border-radius: 20px;
         transition: .2s;
         font-weight: 800;
+        margin: 20px 0px;
         color: ${props => props.theme.colors.titles};
         cursor: pointer;
 
@@ -57,14 +57,14 @@ export const TagsContainer = styled.div`
     overflow-y: auto;
 
     div {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         textarea {
             border-radius: 0px;
-            height: 50px;
+            height: 60px;
             width: 80%;
             resize: vertical;
             outline: none;
